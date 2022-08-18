@@ -7,4 +7,4 @@ ENV TZ=America/Recife
 RUN apt update && apt upgrade -y
 
 RUN apt install -y ros-noetic-rviz
-RUN apt install -y gazebo11
+# RUN apt install -y gazebo11
