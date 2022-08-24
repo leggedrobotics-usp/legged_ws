@@ -1,4 +1,4 @@
-FROM ros:melodic-ros-base-bionic
+FROM osrf/ros:melodic-ros-base-bionic
 
 # Avoiding interactive problems when updating
 ARG DEBIAN_FRONTEND=noninteractive
