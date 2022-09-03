@@ -31,9 +31,5 @@ RUN cd osqp && mkdir build && cd build && cmake -G "Unix Makefiles" ..
 WORKDIR /opt/osqp/build
 RUN cmake --build . --target install
 
-# INSTALLING PRONTO
-WORKDIR /opt
-RUN git clone https://github.com/viviansuzano/pronto.git
-
 # IF YOU NEED TO DEBUG CODE
 # RUN apt install gdb -y
