@@ -9,18 +9,13 @@ What is *contained* in this repository?
 
 # Quickstart 🚀
 
-## Recursively cloning this repository
-To recursively download this repository with the dependencies repositories use the following command:
+## Clone this repository
+To download this repository with the dependencies repositories use the following command:
 ```bash
-git clone --recurse-submodules --remote-submodules https://github.com/lomcin/legged_ws.git
+git clone https://github.com/lomcin/legged_ws.git
 ```
 
 **NOTE: If you just have cloned this repository you will need the following steps:**
-Recursively download the dependencies repositories in this repository using the following command:
-
-```bash
-git submodule update --init
-```
 
 ## ROS Melodic Full "LEGGED" version (Ubuntu 18.04) [recommended] 👈
 To easily build this ROS image:
@@ -33,35 +28,4 @@ To easily start a ROS container:
 ./run_ros melodic-legged
 ```
 
-## ROS Melodic Full (Ubuntu 18.04) [OK] ✅
-To easily build this ROS image:
-```bash
-./build_ros melodic-full
-```
-
-To easily start a ROS container:
-```bash
-./run_ros melodic-full
-```
-
-## ROS Melodic (Ubuntu 18.04) [OK] ✅
-To easily build this ROS image:
-```bash
-./build_ros melodic
-```
-
-To easily start a ROS container:
-```bash
-./run_ros melodic
-```
-
-## ROS Noetic (Ubuntu 20.04) *[not tested at all]* ☢
-To easily build this ROS image:
-```bash
-./build_ros noetic
-```
-
-To easily start a ROS container:
-```bash
-./run_ros noetic
-```
+***To see the full list of docker images go to [IMAGES.md](IMAGES.md).***
