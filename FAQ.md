@@ -20,7 +20,7 @@ Let's say you already have opened a container with `melodic-legged` argument. It
 Once you know where do you want to attach your terminal, lets use the following command on your brand new terminal window (or tab):
 
 ```bash
-./docker_exec.sh melodic-legged
+./docker_attach.sh melodic-legged
 ```
 
 ## How do I run a command directly to a running container?
