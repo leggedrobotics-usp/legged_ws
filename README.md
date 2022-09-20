@@ -7,9 +7,9 @@ What is *contained* in this repository?
 * Scripts that makes docker a little bit easier.
 
 
-# Quickstart 🚀
+# Quickstart 🚀 [recommended] 👈
 
-## Clone this repository
+## Step 1 - Clone this repository
 To download this repository with the dependencies repositories use the following command:
 ```bash
 git clone https://github.com/lomcin/legged_ws.git
@@ -17,15 +17,52 @@ git clone https://github.com/lomcin/legged_ws.git
 
 **NOTE: If you just have cloned this repository you will need the following steps:**
 
-## ROS Melodic Full "LEGGED" version (Ubuntu 18.04) [recommended] 👈
-To easily build this ROS image:
+## Step 2 - Go1 robot workspace
+
+The following command will prepare all the needed repositories and build the needed docker image. (ros-melodic-legged, see [Step 3]())
 ```bash
-./build_ros melodic-legged
+./scripts/prepare_go1_ws.sh
 ```
 
+## Step 3 - ROS Melodic Full "LEGGED" version (Ubuntu 18.04)
+**NOTE: Already built if you followed step 2 **
 To easily start a ROS container:
 ```bash
-./run_ros melodic-legged
+./docker_run.sh melodic-legged
 ```
 
-***To see the full list of docker images go to [IMAGES.md](IMAGES.md).***
+## Step 4 - Build the packages
+Now, inside the docker container let's build all the needed packages.
+
+```If you don't know whether you are inside a container, check if yout current folder and user look something like:``` **user@computer:~/catkin_ws$**
+
+```bash
+./scripts/build_go1_ws.sh
+```
+
+# FAQ - Frequent Asked Questions ❓
+[Click here to be redirected to FAQ.md file.](FAQ.md)
+
+# This repository and its users are thankful for
+<table style="display:flex; justify-items:center; justify-content:center; align-items:center; align-content:center;">
+<tbody>
+<tr>
+<td>
+<img src="https://avatars.githubusercontent.com/u/16033414" alt="Lucas Maggi" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
+<h2>Lucas Maggi</h2> https://github.com/lomcin
+</td>
+<td>
+<img src="https://avatars.githubusercontent.com/u/43577281" alt="Vivian Suzano" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
+<h2>Vivian Suzano</h2> https://github.com/viviansuzano
+</td>
+<td>
+<img src="https://avatars.githubusercontent.com/u/780327" alt="Gustavo Lahr" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
+<h2>Gustavo Lahr</h2> https://github.com/glahr
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
