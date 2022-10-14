@@ -1,0 +1,25 @@
+BootStrap: docker
+From: docker-archive://go1_rl.tar
+
+%setup
+    # runs before the container creation. In this section, we have access to all folders of our home machine
+
+%environment
+
+%post
+    apt-get update
+
+%startscript
+#!/bin/bash
+    source /opt/ros/melodic/setup.bash
+    source devel/setup.bash
+    exec "$@"
+
+%runscript
+#!/bin/bash
+    source /opt/ros/melodic/setup.bash
+    source devel/setup.bash
+    exec "$@"
+
+%test
+    python3 -c 'import sys; print(sys.version)'
