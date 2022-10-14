@@ -19,9 +19,9 @@ git clone https://github.com/lomcin/legged_ws.git
 
 ## Step 2 - Go1 robot workspace
 
-The following command will prepare all the needed repositories and build the needed docker image. (ros-melodic-legged, see [Step 3]())
+The following command will prepare all the needed repositories and build the needed docker image with melodic-legged image. (ros-melodic-legged, see [Step 3]())
 ```bash
-./scripts/prepare_go1_ws.sh
+./scripts/prepare_go1_ws.sh melodic-legged
 ```
 
 ## Step 3 - ROS Melodic Full "LEGGED" version (Ubuntu 18.04)
