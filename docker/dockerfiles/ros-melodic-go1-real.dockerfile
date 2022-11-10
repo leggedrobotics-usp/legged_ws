@@ -34,5 +34,9 @@ RUN cmake --build . --target install
 RUN apt-get install -y ros-melodic-joint-state-publisher-gui
 RUN apt-get install -y ros-melodic-rqt-multiplot
 
+RUN apt-get install ssh
+
+RUN ssh-keygen -t rsa
+
 # IF YOU NEED TO DEBUG CODE
 # RUN apt install gdb -y

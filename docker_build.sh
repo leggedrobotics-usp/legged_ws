@@ -2,4 +2,4 @@
 
 DOCKER_FOLDER=docker/dockerfiles
 
-docker build -f $DOCKER_FOLDER/ros-$1.dockerfile -t ros-$1 .
+docker build -f $DOCKER_FOLDER/ros-$1.dockerfile -t leggedroboticsusp/legged-ws:ros-$1 .

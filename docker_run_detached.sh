@@ -34,5 +34,5 @@ docker run -di \
     --name="$CONTAINER_LABEL" \
     --volume="/dev:/dev:rw" \
     --workdir="$CONTAINER_WORKDIR" \
-    ros-$1
+    leggedroboticsusp/legged-ws:ros-$1
     # --volume="/dev/shm:/dev/shm:rw" \
