@@ -1,24 +1,28 @@
 BootStrap: docker
-From: docker-archive://go1_rl.tar
+From: leggedroboticsusp/legged-ws:ros-melodic-legged
 
 %setup
     # runs before the container creation. In this section, we have access to all folders of our home machine
 
 %environment
+    export source_melodic="source /opt/ros/melodic/setup.bash"
 
 %post
-    apt-get update
+    apt-get update -y
+    apt-get install ros-melodic-rosmon-core -y
+
+    apt-get update -y
 
 %startscript
 #!/bin/bash
     source /opt/ros/melodic/setup.bash
-    source devel/setup.bash
+    source ~/catkin_ws/devel/setup.bash
     exec "$@"
 
 %runscript
 #!/bin/bash
     source /opt/ros/melodic/setup.bash
-    source devel/setup.bash
+    source ~/catkin_ws/devel/setup.bash
     exec "$@"
 
 %test
