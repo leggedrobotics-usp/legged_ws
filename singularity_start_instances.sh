@@ -25,7 +25,7 @@ HOST_SINGULARITY_SCRIPTS=$(pwd)/singularity/scripts
 
 echo $(pwd)
 # sleep 3
-singularity instance start --nv --disable-cache -B $HOST_WORKDIR:$CONTAINER_WORKDIR,$HOST_USER_HOME:$CONTAINER_USER_HOME,/run/user/1001/,/var/lib/dbus/machine-id,/etc/machine-id $HOST_USER_HOME/images/melodic-legged.sif go1_wbc roslaunch go1_gazebo go1_wbc.launch
+singularity instance start --nv --disable-cache -B $HOST_WORKDIR:$CONTAINER_WORKDIR,$HOST_USER_HOME:$CONTAINER_USER_HOME,/run/user/1001/,/var/lib/dbus/machine-id,/etc/machine-id $HOST_USER_HOME/images/melodic-legged.sif go1_wbc roslaunch go1_gazebo go1_wbc.launch enable_rviz:=false
 sleep 3
 singularity instance start --nv --disable-cache -B $HOST_WORKDIR:$CONTAINER_WORKDIR,$HOST_USER_HOME:$CONTAINER_USER_HOME,/run/user/1001/,/var/lib/dbus/machine-id,/etc/machine-id $HOST_USER_HOME/images/melodic-legged.sif rl roslaunch go1_rl go1_rl.launch
 # sleep 1
