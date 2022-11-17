@@ -10,8 +10,16 @@ From: leggedroboticsusp/legged-ws:ros-melodic-legged
 %post
     apt-get update -y
     apt-get install ros-melodic-rosmon-core -y
-
+    apt-get install -y ipython python-rospkg python3-pip
     apt-get update -y
+
+    pip3 install pyyaml
+    pip3 install rospkg
+    pip3 install scipy
+    pip3 install torch
+    pip3 install pandas 
+    pip3 install gym
+    pip3 install stable-baselines3
 
 %startscript
 #!/bin/bash
