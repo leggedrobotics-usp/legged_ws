@@ -16,6 +16,7 @@ mkdir -p $HOST_USER_HOME
 mkdir -p $HOST_WORKDIR
 
 docker run -it --rm \
+    --gpus all \
     --user $(id -u):$(id -g) \
     --env="DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
