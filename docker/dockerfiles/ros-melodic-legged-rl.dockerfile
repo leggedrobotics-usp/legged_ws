@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu18.04
+FROM nvidia/cudagl:11.4.2-runtime-ubuntu18.04
 
 # Avoiding interactive problems when updating
 ARG DEBIAN_FRONTEND=noninteractive
