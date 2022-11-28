@@ -22,4 +22,4 @@ HOST_WORKDIR=$HOST_USER_HOME/catkin_ws
 HOST_SCRIPTS=$(pwd)/scripts
 HOST_SINGULARITY_SCRIPTS=$(pwd)/singularity/scripts
 
-singularity run --nv --disable-cache -B $HOST_WORKDIR:$CONTAINER_WORKDIR,$HOST_USER_HOME:$CONTAINER_USER_HOME,/run/user/1001/,/var/lib/dbus/machine-id,/etc/machine-id $HOST_USER_HOME/images/melodic-legged.sif roslaunch go1_gazebo go1_wbc.launch
+singularity run --nv --disable-cache -B $HOST_WORKDIR:$CONTAINER_WORKDIR,$HOST_USER_HOME:$CONTAINER_USER_HOME,/run/user/1001/,/var/lib/dbus/machine-id,/etc/machine-id $HOST_USER_HOME/images/melodic-legged.sif roslaunch go1_gazebo go1_wbc.launch enable_rviz:=false
