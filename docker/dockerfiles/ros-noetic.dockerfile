@@ -1,4 +1,4 @@
-FROM osrf/ros:noetic-ros-base-focal
+FROM osrf/ros:noetic-desktop-focal
 
 # Avoiding interactive problems when updating
 ARG DEBIAN_FRONTEND=noninteractive
