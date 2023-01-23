@@ -8,10 +8,6 @@ RUN apt update && apt upgrade -y
 
 RUN apt install wget git build-essential -y
 
-RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
-
-RUN wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-
 RUN apt-get update
 RUN apt-get install python3-catkin-tools -y
 
@@ -33,6 +29,9 @@ RUN cmake --build . --target install
 
 RUN apt-get install -y ros-melodic-joint-state-publisher-gui
 RUN apt-get install -y ros-melodic-rqt-multiplot
+# RUN apt-get install -y --no-install-recommends libglvnd0 libgl1 libglx0 libegl1 libgles2
+
+RUN apt-get install -y mesa-utils libgl1-mesa-glx
 
 # IF YOU NEED TO DEBUG CODE
 # RUN apt install gdb -y
