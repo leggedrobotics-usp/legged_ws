@@ -6,5 +6,8 @@ ENV TZ=America/Recife
 
 RUN apt update && apt upgrade -y
 
+# Install dependencies
 RUN apt install -y ros-noetic-rviz
-# RUN apt install -y gazebo11
+RUN apt install wget git build-essential -y
+RUN apt-get install python3-catkin-tools -y
+RUN apt install liburdfdom-dev liboctomap-dev libassimp-dev
