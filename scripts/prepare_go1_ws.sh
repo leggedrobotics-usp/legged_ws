@@ -4,8 +4,11 @@ if [ -z $1 ]; then
     echo "Please, give me a ROS name. Check dockerfiles in docker folder."
 
 else
+    CONTAINER_HOME=docker/container/$1/home/$USER
+    WS_SRC_FOLDER=$CONTAINER_HOME/catkin_ws/src
+    SPLITED_ONE=($(echo $1 | tr "-" "\n"))
 
-    WS_SRC_FOLDER=docker/container/$1/home/$USER/catkin_ws/src
+    echo "source /opt/ros/${SPLITED_ONE[0]}/setup.bash" >> $CONTAINER_HOME/.bashrc
 
     mkdir -p $WS_SRC_FOLDER
 
