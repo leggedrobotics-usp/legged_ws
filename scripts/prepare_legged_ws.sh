@@ -24,9 +24,6 @@ else
     # Clone ocs2_robotic_assets
     git clone https://github.com/leggedrobotics/ocs2_robotic_assets.git $WS_SRC_FOLDER/ocs2_robotic_assets
 
-    # catkin config -DCMAKE_BUILD_TYPE=RelWithDebInfo
-    # catkin build ocs2_legged_robot_ros
-
     echo "Building $1 docker image..."
 
     ./docker_build.sh $1
