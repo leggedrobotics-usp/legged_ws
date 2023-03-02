@@ -24,8 +24,8 @@ docker run -it --rm \
     --ipc="host" \
     --privileged \
     --oom-kill-disable \
-    --volume="/etc/group:/etc/group:ro" \
     --volume="$HOST_USER_HOME:$CONTAINER_USER_HOME:rw" \
+    --volume="/etc/group:/etc/group:ro" \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
