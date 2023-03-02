@@ -14,6 +14,7 @@ else
 
     echo "This may take a while... Downloading needed packages' repositories..."
 
+    # Clone legged_control
     git clone -b master git@github.com:lomcin/legged_control.git $WS_SRC_FOLDER/legged_control
     # Clone OCS2
     git clone https://github.com/leggedrobotics/ocs2.git $WS_SRC_FOLDER/ocs2
@@ -23,6 +24,8 @@ else
     git clone --recurse-submodules https://github.com/leggedrobotics/hpp-fcl.git $WS_SRC_FOLDER/hpp-fcl
     # Clone ocs2_robotic_assets
     git clone https://github.com/leggedrobotics/ocs2_robotic_assets.git $WS_SRC_FOLDER/ocs2_robotic_assets
+    # Clone pronto
+    git clone https://github.com/ori-drs/pronto.git $WS_SRC_FOLDER/pronto
 
     echo "Building $1 docker image..."
 
