@@ -1,4 +1,4 @@
-# FAQ - Frequent Asked Questions ❓
+# FAQ - Frequently Asked Questions ❓
 [ [Back to README.md](README.md) ]
 
 ## How to build a docker image
