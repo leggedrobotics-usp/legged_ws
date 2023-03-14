@@ -26,6 +26,16 @@ else
     git clone https://github.com/leggedrobotics/ocs2_robotic_assets.git $WS_SRC_FOLDER/ocs2_robotic_assets
     # Clone pronto
     git clone https://github.com/ori-drs/pronto.git $WS_SRC_FOLDER/pronto
+    # Clone kindr
+    git clone -b master https://github.com/ANYbotics/kindr.git $WS_SRC_FOLDER/kindr
+    # Clone kindr ros
+    git clone -b master https://github.com/ANYbotics/kindr_ros.git $WS_SRC_FOLDER/kindr_ros
+    # Clone grid map
+    git clone -b master https://github.com/ANYbotics/grid_map.git $WS_SRC_FOLDER/grid_map
+    # Clone elevation mapping
+    git clone -b master https://github.com/ANYbotics/elevation_mapping.git $WS_SRC_FOLDER/elevation_mapping
+    # Clone realsense gazebo plugin
+    git clone -b melodic-devel https://github.com/pal-robotics/realsense_gazebo_plugin.git $WS_SRC_FOLDER/realsense_gazebo_plugin
 
     echo "Building $1 docker image..."
 
