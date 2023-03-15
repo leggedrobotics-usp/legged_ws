@@ -23,8 +23,17 @@ HOST_SCRIPTS=$(pwd)/scripts
 mkdir -p $HOST_USER_HOME
 mkdir -p $HOST_WORKDIR
 
+# Automatically detect NVIDIA's GPU and try to use it
+if [ -z "$(lspci | grep NVIDIA)" ]; then
+    USE_GPUS=""
+    echo "NVIDIA's GPU WAS NOT detected."
+else
+    USE_GPUS="--gpus all"
+    echo "NVIDIA's GPU WAS detected. Activating '--gpus all' flag."
+fi
+
 docker run -di \
-    --gpus all \
+    $USE_GPUS \
     --user $(id -u):$(id -g) \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
