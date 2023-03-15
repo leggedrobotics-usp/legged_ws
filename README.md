@@ -9,6 +9,19 @@ What is *contained* in this repository?
 
 # Quickstart 🚀 [recommended] 👈
 
+## Step 0 - Install GIT and Docker
+
+### GIT 🌳
+```bash
+sudo apt install -y git
+```
+
+### Docker 🐳
+We strongly recommend using the installation of docker from this repository:
+[Linux Stuffs](https://github.com/lomcin/linux-stuffs).
+
+***IMPORTANT FOR NVIDIA's GPU's USERS***: There's also a script for installation of NVIDIA CONTAINER TOOLKIT in the [Linux Stuffs](https://github.com/lomcin/linux-stuffs) repository.
+
 ## Step 1 - Clone this repository
 To download this repository with the dependencies repositories use the following command:
 ```bash
