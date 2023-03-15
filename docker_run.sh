@@ -1,5 +1,13 @@
 #!/bin/bash
-CONTAINER_LABEL=ros_$1
+if [ -z $2 ]; then
+    USER_NAME=catkin
+    CONTAINER_LABEL=ros_$1
+    CONTAINER_ALIAS=$1
+else
+    USER_NAME=$2
+    CONTAINER_LABEL="ros_$1-$2"
+    CONTAINER_ALIAS="$1-$2"
+fi
 
 # Container paths
 CONTAINER_USER_HOME=/home/$USER
@@ -7,7 +15,7 @@ CONTAINER_WORKDIR=$CONTAINER_USER_HOME/catkin_ws
 CONTAINER_SCRIPTS=$CONTAINER_WORKDIR/scripts
 
 # Host paths
-HOST_USER_HOME=$(pwd)/docker/container/$1/home/$USER
+HOST_USER_HOME=$(pwd)/docker/container/$CONTAINER_ALIAS/home/$USER
 HOST_WORKDIR=$HOST_USER_HOME/catkin_ws
 HOST_SCRIPTS=$(pwd)/scripts
 

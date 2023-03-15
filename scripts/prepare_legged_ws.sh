@@ -4,7 +4,15 @@ if [ -z $1 ]; then
     echo "Please, give me a ROS name. Check dockerfiles in docker folder."
 
 else
-    CONTAINER_HOME=docker/container/$1/home/$USER
+    if [ -z $2 ]; then
+        USER_NAME=catkin
+        CONTAINER_ALIAS=$1
+    else
+        USER_NAME=$2
+        CONTAINER_ALIAS=$1-$2
+    fi
+
+    CONTAINER_HOME=docker/container/$CONTAINER_ALIAS/home/$USER
     WS_SRC_FOLDER=$CONTAINER_HOME/catkin_ws/src
     SPLITED_ONE=($(echo $1 | tr "-" "\n"))
 
