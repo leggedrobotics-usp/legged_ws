@@ -53,7 +53,7 @@ Now, inside the docker container let's build all the needed packages.
 ./scripts/build_go1_ws.sh
 ```
 
-# FAQ - Frequent Asked Questions ❓
+# FAQ - Frequently Asked Questions ❓
 [Click here to be redirected to FAQ.md file.](FAQ.md)
 
 # This repository and its users are thankful for
