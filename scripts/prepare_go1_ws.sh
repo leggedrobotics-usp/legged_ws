@@ -33,6 +33,6 @@ else
 
     echo "Building $1 docker image..."
 
-    ./docker_build.sh $1
+    ./docker/build.sh $1
 
 fi
