@@ -57,6 +57,10 @@ Follow the steps in the [QUICKSTART_MELODIC.md](QUICKSTART_MELODIC.md).
 <img src="https://avatars.githubusercontent.com/u/780327" alt="Gustavo Lahr" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
 <h2>Gustavo Lahr</h2> https://github.com/glahr
 </td>
+<td>
+<img src="https://avatars.githubusercontent.com/u/44267124" alt="Leonardo dos Santos" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
+<h2>Leonardo dos Santos</h2> https://github.com/qleonardolp
+</td>
 </tr>
 </tbody>
 </table>
