@@ -6,8 +6,8 @@ What is *contained* in this repository?
 * Dockerfiles for some of ROS distros with the needed build instructions.
 * Scripts that makes docker a little bit easier.
 
-# [Docker Images](IMAGES.md)
-You can checkout what Docker Images we already have and its level of support/reliability in [IMAGES.md](IMAGES.md).
+# [Docker Images](docs/IMAGES.md)
+You can checkout what Docker Images we already have and its level of support/reliability in [docs/IMAGES.md](docs/IMAGES.md).
 
 
 # Quickstart 🚀
@@ -34,12 +34,12 @@ git clone https://github.com/lomcin/legged_ws.git
 **NOTE: If you just have cloned this repository you will need the following steps:**
 
 ## Steps for Noetic (Ubuntu 20.04) [recommended] 👈
-Follow the steps in the [QUICKSTART_NOETIC.md](QUICKSTART_NOETIC.md).
+Follow the steps in the [docs/QUICKSTART_NOETIC.md](docs/QUICKSTART_NOETIC.md).
 ## Steps for Melodic (Ubuntu 18.04)
-Follow the steps in the [QUICKSTART_MELODIC.md](QUICKSTART_MELODIC.md).
+Follow the steps in the [docs/QUICKSTART_MELODIC.md](docs/QUICKSTART_MELODIC.md).
 
 # FAQ - Frequently Asked Questions ❓
-[Click here to be redirected to FAQ.md file.](FAQ.md)
+[Click here to be redirected to docs/FAQ.md file.](docs/FAQ.md)
 
 # This repository and its users are thankful to
 <table style="display:flex; justify-items:center; justify-content:center; align-items:center; align-content:center;">

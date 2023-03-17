@@ -1,5 +1,5 @@
 # FAQ - Frequently Asked Questions ❓
-[ [Back to README.md](README.md) ]
+[ [Back to README.md](../README.md) ]
 
 ## How to build a docker image
 If you already know which image you want to use, then:
@@ -7,7 +7,7 @@ If you already know which image you want to use, then:
 ./docker/build.sh ROS_IMAGE_VERSION_NAME_HERE
 ```
 Where `ROS_IMAGE_VERSION_NAME_HERE` is the image name you want to use.
-**But I don't know which image I want to use.** Then, choose wisely from the [IMAGED.md](IMAGES.md) file, or create your own using the same pattern from the available images in `docker/dockerfiles` files.
+**But I don't know which image I want to use.** Then, choose wisely from the [IMAGES.md](IMAGES.md) file, or create your own using the same pattern from the available images in `docker/dockerfiles` files.
 
 ## How do I use a different ROS distribution?
 To see the full list of docker images go to [IMAGES.md](IMAGES.md).

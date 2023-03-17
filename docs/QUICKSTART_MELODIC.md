@@ -1,8 +1,8 @@
 # Quickstart for Melodic
-[ [Back to README.md](README.md) ]
+[ [Back to README.md](../README.md) ]
 
 ## Previous steps
-Previous steps are available on the [README.md](README.md) file.
+Previous steps are available on the [README.md](../README.md) file.
 NOTE: We have only the Go1 workspace that is fully compatible with ROS Melodic.
 
 ## Step 2 - Go1 robot workspace in Melodic
