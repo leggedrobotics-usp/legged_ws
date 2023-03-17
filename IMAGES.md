@@ -19,12 +19,12 @@ Status: [OK] ✅ [recommended] 👈
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh noetic-legged
+./docker/build.sh noetic-legged
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh noetic-legged
+./docker/run.sh noetic-legged
 ```
 
 ## ROS Noetic Full (Ubuntu 20.04)
@@ -33,12 +33,12 @@ Status: [OK] ✅
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh noetic-full
+./docker/build.sh noetic-full
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh noetic-full
+./docker/run.sh noetic-full
 ```
 
 ## ROS Noetic (Ubuntu 20.04)
@@ -47,12 +47,12 @@ Status: [OK] ✅
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh noetic
+./docker/build.sh noetic
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh noetic
+./docker/run.sh noetic
 ```
 
 ## ROS Melodic Full "LEGGED" version (Ubuntu 18.04)
@@ -61,12 +61,12 @@ Status: [OK] ✅
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh melodic-legged
+./docker/build.sh melodic-legged
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh melodic-legged
+./docker/run.sh melodic-legged
 ```
 
 ## ROS Melodic Full (Ubuntu 18.04)
@@ -75,12 +75,12 @@ Status: [OK] ✅
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh melodic-full
+./docker/build.sh melodic-full
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh melodic-full
+./docker/run.sh melodic-full
 ```
 
 ## ROS Melodic (Ubuntu 18.04)
@@ -89,10 +89,10 @@ Status: [OK] ✅
 
 To easily build this ROS image:
 ```bash
-./docker_build.sh melodic
+./docker/build.sh melodic
 ```
 
 To easily start a ROS container:
 ```bash
-./docker_run.sh melodic
+./docker/run.sh melodic
 ```

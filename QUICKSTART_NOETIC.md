@@ -16,7 +16,7 @@ The following command will prepare all the needed repositories and build the nee
 **NOTE: Already built if you followed step 2 **
 To easily start a ROS container:
 ```bash
-./docker_run.sh noetic-legged
+./docker/run.sh noetic-legged
 ```
 
 ## Step 4 - Build the packages
