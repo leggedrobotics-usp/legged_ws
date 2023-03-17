@@ -41,7 +41,7 @@ Follow the steps in the [QUICKSTART_MELODIC.md](QUICKSTART_MELODIC.md).
 # FAQ - Frequently Asked Questions ❓
 [Click here to be redirected to FAQ.md file.](FAQ.md)
 
-# This repository and its users are thankful for
+# This repository and its users are thankful to
 <table style="display:flex; justify-items:center; justify-content:center; align-items:center; align-content:center;">
 <tbody>
 <tr>
