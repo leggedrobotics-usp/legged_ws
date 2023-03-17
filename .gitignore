@@ -1,3 +1,7 @@
-container/
-docker/container/
+.catkin_tools/
 .vscode/
+build/
+container/
+devel/
+docker/container/
+logs/
