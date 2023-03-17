@@ -11,7 +11,7 @@ else
 
     CONTAINER_EXIST=0
 
-    if [ -z $(docker container ls -a --format="{{.Names}}" | grep $CONTAINER_LABEL) ]; then
+    if [ -z $(docker container ls -a --format="{{.Names}}" --filter= name=^$CONTAINER_LABEL$) ]; then
         ./docker/run_detached.sh $1 $2
     fi
 
