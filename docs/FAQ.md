@@ -1,6 +1,9 @@
 # FAQ - Frequently Asked Questions ❓
 [ [Back to README.md](../README.md) ]
 
+## Problems with Nvidia (container/image/OpenGL/CUDA)?
+Check-out the [nvidia-docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
+
 ## How to build a docker image
 If you already know which image you want to use, then:
 ```bash
