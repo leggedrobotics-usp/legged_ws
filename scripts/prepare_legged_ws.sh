@@ -44,6 +44,8 @@ else
     git clone -b master https://github.com/ANYbotics/elevation_mapping.git $WS_SRC_FOLDER/elevation_mapping
     # Clone realsense gazebo plugin
     git clone -b melodic-devel https://github.com/pal-robotics/realsense_gazebo_plugin.git $WS_SRC_FOLDER/realsense_gazebo_plugin
+    # Clone ANYbotics' message logger
+    git clone -b master https://github.com/ANYbotics/message_logger.git $WS_SRC_FOLDER/message_logger
 
     echo "Building $1 docker image..."
 
