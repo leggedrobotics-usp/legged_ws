@@ -37,6 +37,8 @@ git clone https://github.com/lomcin/legged_ws.git
 Follow the steps in the [docs/QUICKSTART_NOETIC.md](docs/QUICKSTART_NOETIC.md).
 ## Steps for Melodic (Ubuntu 18.04)
 Follow the steps in the [docs/QUICKSTART_MELODIC.md](docs/QUICKSTART_MELODIC.md).
+## Steps for NUCLEO-F446RE (IC2D board)
+Follow the steps in the[docs/QUICKSTART_NUCLEO.md](docs/QUICKSTART_NUCLEO.md)
 
 # FAQ - Frequently Asked Questions ❓
 [Click here to be redirected to docs/FAQ.md file.](docs/FAQ.md)
