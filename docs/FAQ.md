@@ -2,7 +2,45 @@
 [ [Back to README.md](../README.md) ]
 
 ## Problems with Nvidia (container/image/OpenGL/CUDA)?
-Check-out the [nvidia-docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
+First things first: **Are you using Docker Desktop?**
+### If **Yes**: ***Then, remove it***.
+1. Remove [Docker Desktop](https://www.docker.com/products/docker-desktop/):
+```bash
+sudo apt remove docker-desktop
+```
+
+2. Let's begin with a fresh start.
+
+    [Remove all of your containers](https://docs.docker.com/engine/reference/commandline/container_rm/).
+
+3. Then, remove all of your local images.
+```bash
+docker image prune -af
+```
+
+4. Remove docker configuration from the user home folder.
+```bash
+rm -rf ~/.docker
+```
+
+5. Install Docker from this script:
+```
+wget -O - https://github.com/lomcin/linux-stuffs/install/docker | bash
+```
+
+6. Install Nvidia Container Toolkit
+```
+wget -O - https://github.com/lomcin/linux-stuffs/install/nvidia/container_toolkit | bash
+```
+
+7. Install Nvidia docker 2
+```bash
+sudo apt install nvidia-docker2
+```
+
+8. Restart your computer.
+
+### If **No**: Check-out the [nvidia-docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
 
 ## How to build a docker image
 If you already know which image you want to use, then:
