@@ -29,6 +29,7 @@ RUN cmake --build . --target install
 
 RUN apt-get install -y ros-melodic-joint-state-publisher-gui
 RUN apt-get install -y ros-melodic-rqt-multiplot
+RUN apt-get install -y ros-melodic-robot-localization
 # RUN apt-get install -y --no-install-recommends libglvnd0 libgl1 libglx0 libegl1 libgles2
 
 RUN apt-get install -y mesa-utils libgl1-mesa-glx
