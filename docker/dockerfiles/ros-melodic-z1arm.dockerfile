@@ -21,22 +21,18 @@ RUN make install
 # INSTALLING OSQP
 WORKDIR /opt
 RUN git clone --recursive https://github.com/osqp/osqp.git
-
 RUN cd osqp && mkdir build && cd build && cmake -G "Unix Makefiles" ..
-
 WORKDIR /opt/osqp/build
 RUN cmake --build . --target install
 
+RUN apt-get update
 RUN apt-get install -y ros-melodic-joint-state-publisher-gui
 RUN apt-get install -y ros-melodic-rqt-multiplot
-RUN apt-get update
 RUN apt-get install -y ros-melodic-controller-interface
 RUN apt-get install -y ros-melodic-gazebo-ros-control
 RUN apt-get install -y ros-melodic-joint-state-controller
 RUN apt-get install -y ros-melodic-effort-controllers
 RUN apt-get install -y ros-melodic-joint-trajectory-controller
-# RUN apt-get install -y --no-install-recommends libglvnd0 libgl1 libglx0 libegl1 libgles2
-
 RUN apt-get install -y mesa-utils libgl1-mesa-glx
 
 # IF YOU NEED TO DEBUG CODE

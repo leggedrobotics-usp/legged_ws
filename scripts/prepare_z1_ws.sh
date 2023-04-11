@@ -22,8 +22,7 @@ else
 
     echo "This may take a while... Downloading needed packages' repositories..."
 
-    git clone -b master https://github.com/unitreerobotics/unitree_ros_to_real.git $WS_SRC_FOLDER/unitree_ros_to_real
-    git clone -b master https://github.com/unitreerobotics/unitree_ros.git $WS_SRC_FOLDER/unitree_ros
+    git clone -b master git@github.com:qleonardolp/z1arm-legro.git $WS_SRC_FOLDER/z1arm-legro       # SSH
     git clone -b master https://github.com/catkin/catkin_simple.git $WS_SRC_FOLDER/catkin_simple
     git clone -b master https://github.com/ethz-asl/eigen_checks.git $WS_SRC_FOLDER/eigen_checks
     git clone -b master https://github.com/robotology/osqp-eigen.git $WS_SRC_FOLDER/osqp-eigen
