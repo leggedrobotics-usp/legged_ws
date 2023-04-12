@@ -17,3 +17,9 @@ RUN apt install ros-noetic-move-base -y
 RUN apt install ros-noetic-robot-localization -y
 RUN apt install -y ros-noetic-joint-state-publisher-gui
 RUN apt install -y ros-noetic-rqt-multiplot
+
+WORKDIR /opt
+RUN git clone https://github.com/lcm-proj/lcm.git
+WORKDIR /opt/lcm
+
+RUN mkdir build && cd build && cmake .. && make && make install
