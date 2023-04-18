@@ -46,11 +46,14 @@ RUN apt-get update
 RUN apt-get install -y ros-melodic-joint-state-publisher-gui
 RUN apt-get install -y ros-melodic-rqt-multiplot
 RUN apt-get install -y ros-melodic-controller-interface
+RUN apt-get install -y ros-melodic-gazebo-ros-pkgs
 RUN apt-get install -y ros-melodic-gazebo-ros-control
 RUN apt-get install -y ros-melodic-joint-state-controller
 RUN apt-get install -y ros-melodic-effort-controllers
 RUN apt-get install -y ros-melodic-joint-trajectory-controller
 RUN apt-get install -y mesa-utils libgl1-mesa-glx
 
+# Installing nano here to take advantage of cached commands:
+RUN apt update && apt install nano
 # IF YOU NEED TO DEBUG CODE
 # RUN apt install gdb -y

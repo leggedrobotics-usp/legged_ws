@@ -7,4 +7,4 @@
 catkin config -DCMAKE_BUILD_TYPE=Release
 
 # Build all the workspace
-catkin build
+catkin build && source devel/setup.bash 
