@@ -42,18 +42,24 @@ WORKDIR /opt/mc_rbdyn_urdf/build
 RUN make -j
 RUN make install
 
-RUN apt-get update
-RUN apt-get install -y ros-melodic-joint-state-publisher-gui
-RUN apt-get install -y ros-melodic-rqt-multiplot
-RUN apt-get install -y ros-melodic-controller-interface
-RUN apt-get install -y ros-melodic-gazebo-ros-pkgs
-RUN apt-get install -y ros-melodic-gazebo-ros-control
-RUN apt-get install -y ros-melodic-joint-state-controller
-RUN apt-get install -y ros-melodic-effort-controllers
-RUN apt-get install -y ros-melodic-joint-trajectory-controller
-RUN apt-get install -y mesa-utils libgl1-mesa-glx
-
 # Installing nano here to take advantage of cached commands:
 RUN apt update && apt install nano
+
+RUN apt-get update
+# ros_control: combined_robot_hw | controller_interface | controller_manager | controller_manager_msgs | hardware_interface | 
+# joint_limits_interface | realtime_tools | transmission_interface
+RUN apt-get install -y ros-melodic-ros-control 
+
+# ros_controllers: ackermann_steering_controller | diff_drive_controller | effort_controllers | force_torque_sensor_controller
+# forward_command_controller | gripper_action_controller | imu_sensor_controller | joint_state_controller | 
+# joint_trajectory_controller | position_controllers | velocity_controllers
+RUN apt-get install -y ros-melodic-ros-controllers
+
+RUN apt-get install -y ros-melodic-rqt-multiplot
+RUN apt-get install -y ros-melodic-gazebo-ros-pkgs
+RUN apt-get install -y ros-melodic-gazebo-ros-control
+RUN apt-get install -y ros-melodic-joint-state-publisher-gui
+RUN apt-get install -y mesa-utils libgl1-mesa-glx
+
 # IF YOU NEED TO DEBUG CODE
 # RUN apt install gdb -y
