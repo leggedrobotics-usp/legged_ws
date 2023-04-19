@@ -42,6 +42,9 @@ WORKDIR /opt/mc_rbdyn_urdf/build
 RUN make -j
 RUN make install
 
+# 'RBDyn Library not found'
+RUN ldconfig
+
 # Installing nano here to take advantage of cached commands:
 RUN apt update && apt install nano
 
