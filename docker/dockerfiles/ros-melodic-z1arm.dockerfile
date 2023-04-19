@@ -6,7 +6,7 @@ ENV TZ=America/Recife
 
 RUN apt update && apt upgrade -y
 
-RUN apt install wget git build-essential -y
+RUN apt install wget git nano build-essential -y
 
 RUN apt-get update
 RUN apt-get install python3-catkin-tools -y
@@ -18,15 +18,32 @@ RUN cd eigen && mkdir build && cd build && cmake ..
 WORKDIR /opt/eigen/build
 RUN make install
 
-# INSTALLING OSQP
+# INSTALLING SpaceVecAlg FROM SOURCE
 WORKDIR /opt
-RUN git clone --recursive https://github.com/osqp/osqp.git
-RUN cd osqp && mkdir build && cd build && cmake -G "Unix Makefiles" ..
-WORKDIR /opt/osqp/build
-RUN cmake --build . --target install
+RUN git clone --recursive https://github.com/jrl-umi3218/SpaceVecAlg
+RUN cd SpaceVecAlg && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_BINDING=OFF ..
+WORKDIR /opt/SpaceVecAlg/build
+RUN make -j
+RUN make install
 
-# Installing nano here to take advantage of cached commands:
-RUN apt update && apt install nano
+# INSTALLING RBDyn FROM SOURCE 
+WORKDIR /opt
+RUN git clone --recursive https://github.com/jrl-umi3218/RBDyn
+RUN cd RBDyn && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_BINDING=OFF ..
+WORKDIR /opt/RBDyn/build
+RUN make -j
+RUN make install
+
+# INSTALLING mc_rbdyn_urdf FROM SOURCE
+WORKDIR /opt
+RUN git clone --recursive https://github.com/jrl-umi3218/mc_rbdyn_urdf
+RUN cd mc_rbdyn_urdf && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_BINDING=OFF ..
+WORKDIR /opt/mc_rbdyn_urdf/build
+RUN make -j
+RUN make install
+
+# 'RBDyn Library not found'
+RUN ldconfig
 
 RUN apt-get update
 # ros_control: combined_robot_hw | controller_interface | controller_manager | controller_manager_msgs | hardware_interface | 

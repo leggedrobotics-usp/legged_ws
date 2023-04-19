@@ -22,11 +22,9 @@ else
 
     echo "This may take a while... Downloading needed packages' repositories..."
 
-    git clone -b master git@github.com:qleonardolp/z1arm-legro.git $WS_SRC_FOLDER/z1arm-legro       # SSH
-    git clone -b master https://github.com/catkin/catkin_simple.git $WS_SRC_FOLDER/catkin_simple
-    git clone -b master https://github.com/ethz-asl/eigen_checks.git $WS_SRC_FOLDER/eigen_checks
-    git clone -b master https://github.com/robotology/osqp-eigen.git $WS_SRC_FOLDER/osqp-eigen
-
+    git clone -b master git@github.com:qleonardolp/Cartesian-Impedance-Controller.git $WS_SRC_FOLDER/Cartesian-Impedance-Controller
+    git clone -b master git@github.com:qleonardolp/z1arm-legro.git $WS_SRC_FOLDER/z1arm-legro
+    
     echo "Building $1 docker image..."
 
     ./docker/build.sh $1
