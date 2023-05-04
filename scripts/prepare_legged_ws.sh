@@ -48,8 +48,8 @@ else
     git clone -b melodic-devel https://github.com/pal-robotics/realsense_gazebo_plugin.git $WS_SRC_FOLDER/realsense_gazebo_plugin
     # Clone ANYbotics' message logger
     git clone -b master https://github.com/ANYbotics/message_logger.git $WS_SRC_FOLDER/message_logger
-    # Clone mujoco_ros_sim
-    git clone -b master https://github.com/saga0619/mujoco_ros_sim $WS_SRC_FOLDER/mujoco_ros_sim
+    # Clone mujoco_ros
+    git clone -b master git@github.com:lomcin/mujoco_ros.git $WS_SRC_FOLDER/mujoco_ros
 
     echo "Building $1 docker image..."
 
