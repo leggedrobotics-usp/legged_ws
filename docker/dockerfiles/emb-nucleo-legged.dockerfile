@@ -16,6 +16,6 @@ RUN apt-get update
 RUN apt install python3 python3-pip python3-venv python-dev -y
 
 # Install PlatformIO
-RUN /usr/bin/python3 -m pip install platformio
+RUN /usr/bin/python3 -m pip install platformio==6.1.6
 
-# Install STM32CubeIDE
+RUN apt install nano
