@@ -20,6 +20,7 @@ RUN /usr/bin/python3 -m pip install platformio==6.1.6
 
 RUN apt install nano
 
-# Install Framework Mbed 5.51105.220603
-WORKDIR /home/USER/.platformio/packages
-RUN git clone https://github.com/qleonardolp/framework-mbed-5.51105.220603.git framework-mbed
+# Install Framework Mbed 5.51105.220603 --> moved to the prepare_embedded_ws.sh
+#ARG USER
+#WORKDIR /home/$USER/.platformio/packages
+#RUN git clone https://github.com/qleonardolp/framework-mbed-5.51105.220603.git framework-mbed
