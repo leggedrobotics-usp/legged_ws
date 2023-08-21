@@ -20,7 +20,7 @@ else
     echo "This may take a while... Downloading needed packages' repositories..."
 
     # Clone Forecast Nucleo Framework
-    git clone --recurse-submodules git@github.com:qleonardolp/forecast-nucleo.git $WS_SRC_FOLDER/forecast-nucleo
+    git clone --recurse-submodules git@github.com:qleonardolp/ic2d-nucleo.git $WS_SRC_FOLDER/ic2d-nucleo
     git clone https://github.com/qleonardolp/framework-mbed-5.51105.220603.git $WS_SRC_FOLDER/.platformio/packages/framework-mbed
 
     echo "Building $1 docker image..."
