@@ -40,6 +40,8 @@ else
     git clone -b master https://github.com/ANYbotics/kindr_ros.git $WS_SRC_FOLDER/kindr_ros
     # Clone grid map
     git clone -b master https://github.com/ANYbotics/grid_map.git $WS_SRC_FOLDER/grid_map
+    # Clone octomap_msgs
+    git clone -b melodic-devel https://github.com/OctoMap/octomap_msgs.git $WS_SRC_FOLDER/octomap_msgs
     # Clone elevation mapping
     git clone -b master https://github.com/ANYbotics/elevation_mapping.git $WS_SRC_FOLDER/elevation_mapping
     # Clone realsense gazebo plugin
