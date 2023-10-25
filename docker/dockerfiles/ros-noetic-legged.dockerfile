@@ -17,3 +17,6 @@ RUN apt install ros-noetic-move-base -y
 RUN apt install ros-noetic-robot-localization -y
 RUN apt install -y ros-noetic-joint-state-publisher-gui
 RUN apt install -y ros-noetic-rqt-multiplot
+
+RUN apt install -y ros-noetic-joy ros-noetic-teleop-tools
+RUN apt install -y usbutils
