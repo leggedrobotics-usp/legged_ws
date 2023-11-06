@@ -20,3 +20,4 @@ RUN apt install -y ros-noetic-rqt-multiplot
 
 RUN apt install -y ros-noetic-joy ros-noetic-teleop-tools
 RUN apt install -y usbutils
+RUN apt install -y ros-noetic-teleop-twist-joy
