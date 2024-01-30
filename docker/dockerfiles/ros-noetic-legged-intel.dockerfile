@@ -31,4 +31,7 @@ RUN cmake . -DBUILD_EXAMPLES=true
 RUN make uninstall && make clean && make && make install -j$(nproc --all)
 RUN apt install bash -y
 RUN /bin/bash scripts/setup_udev_rules.sh
+RUN apt-get install ros-$ROS_DISTRO-realsense2-camera ros-$ROS_DISTRO-realsense2-description -y
+RUN apt install ros-$ROS_DISTRO-rtabmap* -y
+RUN apt install ros-$ROS_DISTRO-octomap* -y
 # RUN /bin/bash scripts/patch-realsense-ubuntu-lts.sh
