@@ -38,6 +38,9 @@ Follow the steps in the [docs/QUICKSTART_NOETIC.md](docs/QUICKSTART_NOETIC.md).
 ## Steps for Melodic (Ubuntu 18.04)
 Follow the steps in the [docs/QUICKSTART_MELODIC.md](docs/QUICKSTART_MELODIC.md).
 
+## Steps for Mapping Noetic (Ubuntu 20.04) [needs special hardware]
+Follow the steps in the [docs/QUICKSTART_NOETIC_MAPPING.md](docs/QUICKSTART_NOETIC_MAPPING.md).
+
 # FAQ - Frequently Asked Questions ❓
 [Click here to be redirected to docs/FAQ.md file.](docs/FAQ.md)
 
