@@ -12,7 +12,7 @@ The following command will prepare all the needed repositories and build the nee
 ./scripts/prepare_legged_ws.sh noetic-legged
 ```
 
-## Step 3 - ROS Noetic Full "LEGGED" version (Ubuntu 18.04)
+## Step 3 - ROS Noetic Full "LEGGED" version (Ubuntu 20.04)
 **NOTE: Already built if you followed step 2 **
 To easily start a ROS container:
 ```bash
