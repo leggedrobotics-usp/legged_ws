@@ -25,6 +25,9 @@ else
     # Clone RealSense ROS
     git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git $WS_SRC_FOLDER/realsense-ros
 
+    echo "Setting up dialout permissions for this USER:$USER..."
+    sudo usermod -a -G dialout $USER
+
     echo "Building $1 docker image..."
 
     # ./docker/build.sh $1
