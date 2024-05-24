@@ -1,11 +1,18 @@
-FROM osrf/ros:noetic-desktop-full-focal
+FROM nvidia/cudagl:11.3.0-devel-ubuntu20.04 AS nvidia
 
 # Avoiding interactive problems when updating
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Sao_Paulo
 
+# Install Configure and ROS Noetic
+RUN apt update && apt upgrade -y
+RUN apt install -y wget git build-essential lsb-release curl
+RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
+RUN apt-get update && apt-get upgrade -y && apt-get install -y ros-noetic-desktop-full
+
 # Install dependencies
-RUN apt-get update && apt-get upgrade -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     wget git build-essential \
     python3-catkin-tools \
     python3-rosdep \
