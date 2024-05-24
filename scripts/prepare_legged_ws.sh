@@ -23,7 +23,7 @@ else
     echo "This may take a while... Downloading needed packages' repositories..."
 
     # Clone legged_control
-    git clone -b real_robot git@github.com:lomcin/legged_control.git $WS_SRC_FOLDER/legged_control
+    git clone -b nav_robot_stable git@github.com:leggedrobotics-usp/legged_control.git $WS_SRC_FOLDER/legged_control
     # Clone OCS2
     git clone https://github.com/leggedrobotics/ocs2.git $WS_SRC_FOLDER/ocs2
     # Clone pinocchio
