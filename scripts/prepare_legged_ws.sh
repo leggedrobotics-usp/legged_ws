@@ -16,9 +16,9 @@ else
     WS_SRC_FOLDER=$CONTAINER_HOME/catkin_ws/src
     SPLITED_ONE=($(echo $1 | tr "-" "\n"))
 
-    echo "source /opt/ros/${SPLITED_ONE[0]}/setup.bash" >> $CONTAINER_HOME/.bashrc
-
     mkdir -p $WS_SRC_FOLDER
+
+    echo "source /opt/ros/${SPLITED_ONE[0]}/setup.bash" >> $CONTAINER_HOME/.bashrc
 
     echo "This may take a while... Downloading needed packages' repositories..."
 
