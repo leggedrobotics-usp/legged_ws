@@ -23,7 +23,7 @@ else
     echo "This may take a while... Downloading needed packages' repositories..."
 
     # Clone legged_control
-    git clone -b master git@github.com:lomcin/legged_control.git $WS_SRC_FOLDER/legged_control
+    git clone -b real_robot git@github.com:lomcin/legged_control.git $WS_SRC_FOLDER/legged_control
     # Clone OCS2
     git clone https://github.com/leggedrobotics/ocs2.git $WS_SRC_FOLDER/ocs2
     # Clone pinocchio
@@ -44,11 +44,21 @@ else
     git clone -b melodic-devel https://github.com/OctoMap/octomap_msgs.git $WS_SRC_FOLDER/octomap_msgs
     # Clone elevation mapping
     git clone -b master https://github.com/ANYbotics/elevation_mapping.git $WS_SRC_FOLDER/elevation_mapping
+    # Clone message_logger dependency of elevation_mapping
+    git clone -b master https://github.com/ANYbotics/message_logger.git $WS_SRC_FOLDER/message_logger
     # Clone realsense gazebo plugin
     git clone -b melodic-devel https://github.com/pal-robotics/realsense_gazebo_plugin.git $WS_SRC_FOLDER/realsense_gazebo_plugin
-    # Clone ANYbotics' message logger
-    git clone -b master https://github.com/ANYbotics/message_logger.git $WS_SRC_FOLDER/message_logger
+    # Clone Navigation
+    git clone -b noetic-devel https://github.com/ros-planning/navigation.git $WS_SRC_FOLDER/navigation
+    # Clone Navigation Local planner -  teb_local_planner
+    git clone -b noetic-devel https://github.com/rst-tu-dortmund/teb_local_planner.git $WS_SRC_FOLDER/navigation/teb_local_planner
+    # Clone move_base_sequence
+    git clone -b main https://github.com/MarkNaeem/move_base_sequence.git $WS_SRC_FOLDER/move_base_sequence
 
+    
+    #Folow waypoint
+    #git clone -b master https://github.com/danielsnider/follow_waypoints.git $WS_SRC_FOLDER/follow_waypoints
+    
     echo "Building $1 docker image..."
 
     ./docker/build.sh $1
