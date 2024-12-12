@@ -9,14 +9,14 @@ NOTE: We have only the Go1 workspace that is fully compatible with ROS Noetic.
 
 The following command will prepare all the needed repositories and build the needed docker image with noetic-legged image.
 ```bash
-./scripts/prepare_legged_ws.sh noetic-legged
+./scripts/prepare_legged_ws.sh noetic-legged-b2
 ```
 
 ## Step 3 - ROS Noetic Full "LEGGED" version (Ubuntu 20.04)
 **NOTE: Already built if you followed step 2 **
 To easily start a ROS container:
 ```bash
-./docker/run.sh noetic-legged
+./docker/run.sh noetic-legged-b2
 ```
 
 ## Step 4 - Build the packages
