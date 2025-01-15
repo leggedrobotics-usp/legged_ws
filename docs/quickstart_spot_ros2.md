@@ -198,4 +198,4 @@ To navigate:
 
 * Python scripts to control spot robot(s).
 * Graphical interface, suuch as: Gazebo, WeBots, IsaacSim, Unity, or Unreal. [This repository](https://github.com/MASKOR/webots_ros2_spot/tree/main) is an option, but it needs the SDK.
-* Add spot to the gazebo simulation, could be based in [this package](https://github.com/chvmp/robots/tree/ros2), which currently is only for ROS 1 (I've tried the ROS 2 branch, and still using ROS 1 codes).
+* Add spot to the gazebo simulation, could be based in [this package](https://github.com/chvmp/robots/tree/ros2), which currently is only for ROS 1 (I've tried the ROS 2 branch, and it still using ROS 1 codes).
