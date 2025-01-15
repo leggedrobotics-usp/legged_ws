@@ -44,7 +44,7 @@ Commands can be sent on the `topic /<Robot Name>/forward_position_controller/com
 
 An alternative feed-forward controller provided by the spot_controllers package can be used to specify the position, velocity, and effort of all joints at the same time. To bring up this controller, add the launch argument robot_controller:=forward_state_controller. Commands can then be sent on the topic `/<Robot Name>/forward_state_controller/commands`. This controller expects the ordering of the command array to be `[<positions for each joint>, <velocities for each joint>, <efforts for each joint>]`.
 
-# RVIZ Simulation (same commands than in real)
+# RVIZ Simulation (same commands than in Real Robot)
 
 Run spot without arm in RVIZ:
 
