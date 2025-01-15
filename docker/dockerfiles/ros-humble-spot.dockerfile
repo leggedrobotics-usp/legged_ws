@@ -12,6 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q && \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-gazebo-ros2-control \
     ros-humble-robot-localization \
+    ros-humble-nav2-bringup \
     python3-pip \
     python-is-python3 \
     python3-argcomplete \
@@ -28,6 +29,10 @@ WORKDIR /catkin_ws/src
 # Clone driver code
 RUN git clone https://github.com/bdaiinstitute/spot_ros2.git .
 RUN git submodule update --init --recursive
+
+RUN git clone --recursive https://github.com/chvmp/champ -b ros2
+RUN git clone https://github.com/chvmp/champ_teleop -b ros2
+# RUN git clone https://github.com/chvmp/robots.git -b ros2
 
 # Run install script
 RUN /catkin_ws/src/install_spot_ros2.sh
