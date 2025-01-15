@@ -188,7 +188,7 @@ To navigate:
 - Click '2D Nav Goal'.
 - Click and drag at the position you want the robot to go.
 
-# Additional Arguments
+# Additional Arguments (For the Real Robot and the RVIZ Simulation)
 
 * `controllers_config`: If this argument is unset, a general purpose controller configuration will be loaded containing a forward position controller and a joint state publisher, that is filled appropriately based on whether or not the robot used (mock or real) has an arm. The forward state controller is also specified here. If you wish to load different controllers, this can be set here.
 * `robot_controller`: This is the name of the robot controller that will be started when the launchfile is called. The default is the simple forward position controller. The name must match a controller in the `controllers_config` file.
