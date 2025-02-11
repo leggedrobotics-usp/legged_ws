@@ -7,12 +7,18 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q && \
     tmux \
     # just to validate new packages faster
     git \ 
+    vim \
     curl \
     wget \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-gazebo-ros2-control \
     ros-humble-robot-localization \
     ros-humble-nav2-bringup \
+    ros-humble-robot-state-publisher \
+    ros-humble-controller-manager\
+    ros-humble-control*\
+    ros-humble-ign-ros2-control\
+    ros-humble-ign-ros2-control-demos\
     python3-pip \
     python-is-python3 \
     python3-argcomplete \
@@ -30,8 +36,10 @@ WORKDIR /catkin_ws/src
 RUN git clone https://github.com/bdaiinstitute/spot_ros2.git .
 RUN git submodule update --init --recursive
 
+# RUN git clone https://github.com/diyaagarwal21/spot_ros2_ign.git
 RUN git clone --recursive https://github.com/chvmp/champ -b ros2
 RUN git clone https://github.com/chvmp/champ_teleop -b ros2
+RUN git clone https://github.com/lidiaxp/chvmp_robots_ros2
 # RUN git clone https://github.com/chvmp/robots.git -b ros2
 
 # Run install script
