@@ -31,3 +31,5 @@ RUN apt update && apt upgrade -y
 # Installl ROS 2 (Jazzy): ROS, RViz, demos, tutorials.
 RUN apt install ros-jazzy-desktop -y
 RUN apt-get install ros-jazzy-ros-gz -y
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends python3 python3-pip ca-certificates
