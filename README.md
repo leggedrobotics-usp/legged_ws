@@ -33,12 +33,19 @@ git clone https://github.com/leggedrobotics-usp/legged_ws.git
 
 **NOTE: If you just have cloned this repository you will need the following steps:**
 
-## Steps for Noetic (Ubuntu 20.04) [recommended] 👈
+## ROS 2
+
+## Steps for Jazzy (Ubuntu 24.04) [recommended] 👈
+Follow the steps in the [docs/QUICKSTART_JAZZY.md](docs/QUICKSTART_JAZZY.md).
+
+## ROS 1
+
+### Steps for Noetic (Ubuntu 20.04) [recommended] 👈
 Follow the steps in the [docs/QUICKSTART_NOETIC.md](docs/QUICKSTART_NOETIC.md).
-## Steps for Melodic (Ubuntu 18.04)
+### Steps for Melodic (Ubuntu 18.04)
 Follow the steps in the [docs/QUICKSTART_MELODIC.md](docs/QUICKSTART_MELODIC.md).
 
-## Steps for Mapping Noetic (Ubuntu 20.04) [needs special hardware]
+### Steps for Mapping Noetic (Ubuntu 20.04) [needs special hardware]
 Follow the steps in the [docs/QUICKSTART_NOETIC_MAPPING.md](docs/QUICKSTART_NOETIC_MAPPING.md).
 
 # FAQ - Frequently Asked Questions ❓
