@@ -6,7 +6,7 @@ else
     DOCKER_FOLDER=docker/dockerfiles
 
     if [ -e $DOCKER_FOLDER/ros-$1.dockerfile ]; then
-        docker build -f $DOCKER_FOLDER/ros-$1.dockerfile -t leggedroboticsusp/legged-ws:ros-$1 .
+        docker build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) --build-arg USER=$USER -f $DOCKER_FOLDER/ros-$1.dockerfile -t leggedroboticsusp/legged-ws:ros-$1 .
     else
         echo "Please, give me a VALID ROS image name."
         echo "The available images are: "
