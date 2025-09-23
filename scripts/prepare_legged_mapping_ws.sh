@@ -12,7 +12,8 @@ else
         CONTAINER_ALIAS=$1-$2
     fi
 
-    CONTAINER_HOME=docker/container/$CONTAINER_ALIAS/home/$USER
+    ORIG_PWD=$(pwd)
+    CONTAINER_HOME=$(pwd)/docker/container/$CONTAINER_ALIAS/home/$USER
     WS_SRC_FOLDER=$CONTAINER_HOME/catkin_ws/src
     SPLITED_ONE=($(echo $1 | tr "-" "\n"))
 
@@ -93,6 +94,7 @@ else
     
     echo "Building $1 docker image..."
 
+    cd "$ORIG_PWD"
     ./docker/build.sh $1
 
 fi
