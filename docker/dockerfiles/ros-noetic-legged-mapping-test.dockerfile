@@ -170,7 +170,6 @@ RUN apt install -y iputils-ping
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Ferramentas de sistema e build
-    
     usbutils \
     v4l-utils \
     # Dependências para compilar librealsense e outros pacotes
@@ -186,3 +185,32 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-image-transport \
     ros-noetic-rqt* \
     ros-noetic-aruco-ros
+
+# RUN apt-get update && apt-get install -y wget gpg
+# RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | \
+#     gpg --dearmor -o /usr/share/keyrings/kitware-archive-keyring.gpg && \
+#     echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' \
+#       > /etc/apt/sources.list.d/kitware.list && \
+#     apt-get update && apt-get install -y cmake
+
+#WORKDIR /opt/pcl/src
+#RUN wget https://github.com/PointCloudLibrary/pcl/releases/download/pcl-1.15.1/source.tar.gz && \
+#    tar xvf source.tar.gz && \
+#    cd pcl && \
+#    mkdir build && \
+#    cd build && \
+#    cmake .. && \
+#    make -j2 && \
+#    make -j2 install
+
+# WORKDIR /opt/catkin_point_lio_unilidar/src
+# RUN git clone https://github.com/unitreerobotics/unilidar_sdk.git && \
+#     cd ./unilidar_sdk/unitree_lidar_sdk && \
+#     mkdir build && \
+#     cd build && \
+#     cmake .. && \
+#     make -j2 && \
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-noetic-pcl-conversions \
+    libeigen3-dev
