@@ -18,14 +18,13 @@ else
     SPLITED_ONE=($(echo $1 | tr "-" "\n"))
 
     mkdir -p $WS_SRC_FOLDER
-    mkdir -p $
 
     echo "source /opt/ros/${SPLITED_ONE[0]}/setup.bash" >> $CONTAINER_HOME/.bashrc
 
     echo "This may take a while... Downloading needed packages' repositories..."
 
     # Clone legged_control
-    git clone -b navigation_test_am git@github.com:leggedrobotics-usp/legged_control.git $WS_SRC_FOLDER/legged_control
+    git clone -b navigation_test_am https://github.com/leggedrobotics-usp/legged_control.git $WS_SRC_FOLDER/legged_control
     # Clone OCS2
     git clone https://github.com/leggedrobotics/ocs2.git $WS_SRC_FOLDER/ocs2
     # Clone pinocchio
@@ -66,14 +65,13 @@ else
 
 
     # Clone mapping legro    
-    git clone -b am2/dev git@github.com:leggedrobotics-usp/mapping_legro.git $WS_SRC_FOLDER/mapping_legro
+    git clone -b am2/dev https://github.com/leggedrobotics-usp/mapping_legro.git $WS_SRC_FOLDER/mapping_legro
 
     # Clone am navigation   
-    #git clone -b am/dev git@github.com:leggedrobotics-usp/am_navigation.git $WS_SRC_FOLDER/am_navigation
-    git clone -b am2/dev git@github.com:leggedrobotics-usp/am_navigation.git $WS_SRC_FOLDER/am_navigation
+    git clone -b am2/dev https://github.com/leggedrobotics-usp/am_navigation.git $WS_SRC_FOLDER/am_navigation
 
     # Colocando o am_maps
-    git clone -b am/dev git@github.com:leggedrobotics-usp/am_maps.git $WS_SRC_FOLDER/am_maps
+    git clone -b am/dev https://github.com/leggedrobotics-usp/am_maps.git $WS_SRC_FOLDER/am_maps
 
 
     git clone https://github.com/Livox-SDK/livox_ros_driver2.git $WS_SRC_FOLDER/livox_ros_driver2
