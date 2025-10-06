@@ -86,13 +86,15 @@ else
     git clone https://github.com/hku-mars/FAST_LIO $WS_SRC_FOLDER/FAST_LIO
     cd $WS_SRC_FOLDER/FAST_LIO
     git submodule update --init
-    cd $WS_SRC_FOLDER
 
-    #Folow waypoint
+    cd $WS_SRC_FOLDER
+    git clone https://github.com/unitreerobotics/unilidar_sdk.git
+    rm -rf unilidar_sdk/unitree_lidar_ros2
+
+    #Folow waypointS
     #git clone -b master https://github.com/danielsnider/follow_waypoints.git $WS_SRC_FOLDER/follow_waypoints
     
     echo "Building $1 docker image..."
-
     ./docker/build.sh $1
 
 fi
