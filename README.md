@@ -1,75 +1,124 @@
-# Legged Robotics Workspace 💻
+# ▶️ ArcelorMittal Legged Workspace 💻
 
-A simplified repository for Legged Robotics Workspace using ROS + Docker. 😎
+[![Docker](https://img.shields.io/badge/docker-ready-blue?logo=docker)](https://www.docker.com/)
+[![Ubuntu](https://img.shields.io/badge/ubuntu-20.04-orange?logo=ubuntu)](https://releases.ubuntu.com/20.04/)
+[![ROS Noetic](https://img.shields.io/badge/ROS-Noetic-blueviolet?logo=ros)](http://wiki.ros.org/noetic)
 
-What is *contained* in this repository?
-* Dockerfiles for some of ROS distros with the needed build instructions.
-* Scripts that makes docker a little bit easier.
+> A streamlined repository designed for deployment at **ArcelorMittal**, based on the **Legged Robotics Workspace**. 😎
 
-# [Docker Images](docs/IMAGES.md)
-You can checkout what Docker Images we already have and its level of support/reliability in [docs/IMAGES.md](docs/IMAGES.md).
+---
 
+## 🚀 Quickstart
 
-# Quickstart 🚀
+### 0️⃣ Install GIT, Docker, and Clone this Repository
 
-## Step 0 - Install GIT and Docker
+To deploy the ArcelorMittal workspace, you will need **GIT** and **Docker**.
 
-### GIT 🌳
+#### 📦 Install GIT (Locally)
 ```bash
 sudo apt install -y git
 ```
 
-### Docker 🐳
-We **strongly recommend** using the installation of docker from this repository:
-[Linux Stuffs](https://github.com/lomcin/linux-stuffs).
+#### 🐋 Install Docker (Locally)
+If Docker is not yet installed, we **strongly recommend** using the installation scripts available in the following repository:  
+👉 [Linux Stuffs](https://github.com/lomcin/linux-stuffs)
 
-***IMPORTANT FOR NVIDIA's GPU's USERS***: There's also a script for installation of NVIDIA CONTAINER TOOLKIT in the [Linux Stuffs](https://github.com/lomcin/linux-stuffs) repository.
+> **Important for NVIDIA GPU Users:**  
+> The **Linux Stuffs** repository also provides a script to install the **NVIDIA Container Toolkit**, which is required for GPU-enabled Docker containers.
 
-## Step 1 - Clone this repository
-To download this repository with the dependencies repositories use the following command:
+#### 🐱 Clone our Repo (Locally)
+Finally, clone this repository using:
 ```bash
 git clone https://github.com/leggedrobotics-usp/legged_ws.git
 ```
 
-**NOTE: If you just have cloned this repository you will need the following steps:**
+---
 
-## Steps for Noetic (Ubuntu 20.04) [recommended] 👈
-Follow the steps in the [docs/QUICKSTART_NOETIC.md](docs/QUICKSTART_NOETIC.md).
-## Steps for Melodic (Ubuntu 18.04)
-Follow the steps in the [docs/QUICKSTART_MELODIC.md](docs/QUICKSTART_MELODIC.md).
+### 1️⃣ Prepare the ArcelorMittal Workspace (Locally)
 
-## Steps for Mapping Noetic (Ubuntu 20.04) [needs special hardware]
-Follow the steps in the [docs/QUICKSTART_NOETIC_MAPPING.md](docs/QUICKSTART_NOETIC_MAPPING.md).
+This project uses an **Ubuntu 20.04 (ROS Noetic)** Docker image to build the workspace.  
+The first step is to prepare the environment by downloading all necessary dependencies and packages.
 
-# FAQ - Frequently Asked Questions ❓
-[Click here to be redirected to docs/FAQ.md file.](docs/FAQ.md)
+Run the following script:
+```bash
+./scripts/prepare_am_ws.sh
 
-# This repository and its users are thankful to
-<table style="display:flex; justify-items:center; justify-content:center; align-items:center; align-content:center;">
-<tbody>
-<tr>
-<td>
-<img src="https://avatars.githubusercontent.com/u/16033414" alt="Lucas Maggi" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
-<h2>Lucas Maggi</h2> https://github.com/lomcin
-</td>
-<td>
-<img src="https://avatars.githubusercontent.com/u/43577281" alt="Vivian Suzano" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
-<h2>Vivian Suzano</h2> https://github.com/viviansuzano
-</td>
-<td>
-<img src="https://avatars.githubusercontent.com/u/780327" alt="Gustavo Lahr" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
-<h2>Gustavo Lahr</h2> https://github.com/glahr
-</td>
-</tr>
-<tr>
-<td>
-<img src="https://avatars.githubusercontent.com/u/44267124" alt="Leonardo dos Santos" width="100px" height="auto" style="border-radius:50%; border: 2px solid white; position: relative; top: 0px; z-index:9999;" class="avatar-user">
-<h2>Leonardo dos Santos</h2> https://github.com/qleonardolp
-</td>
-</tr>
-</tbody>
-</table>
+> **Note:** The script will attempt to build the Docker image automatically at the end of its execution.  
+> If any errors occur, try rebuilding manually using:  
+> ```bash
+> ./docker/build.sh noetic-am
+> ```
+```
 
+---
 
+### 2️⃣ Launch the Docker Container (Locally)
 
+Once the workspace has been prepared, start the Docker container with:
+```bash
+./docker/run_am.sh
+```
 
+---
+
+### 3️⃣ Build  (Inside the Docker)
+
+Inside the docker, you will need to compile the packages inside the docker for usage, through:
+```bash
+./scripts/build_am_ws.sh
+```
+
+Note that this action may take a while.
+
+---
+
+### 4️⃣ Source Packages and Run the Simulation (Inside the Docker)
+
+After entering the container, source the necessary ROS environments and launch the simulation example:
+
+```bash
+source /opt/ros/noetic/setup.bash
+source devel/setup.bash
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/am_maps/worlds/models:$GAZEBO_MODEL_PATH
+export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/am_maps:$GAZEBO_RESOURCE_PATH
+roslaunch am_navigation legged_sim_navigation.launch enable_elevation:=true enable_map:=true 
+```
+
+---
+
+### 5️⃣ Source Packages and Send Commands (Inside a New Docker)
+
+Open a **second terminal** using:
+```bash
+./docker/attach_am.sh
+```
+
+Then, source the same environments and start the navigation example:
+```bash
+source /opt/ros/noetic/setup.bash
+source devel/setup.bash
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/am_maps/worlds/models:$GAZEBO_MODEL_PATH
+export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/am_maps:$GAZEBO_RESOURCE_PATH
+rosservice call /startPath "{}"
+```
+
+---
+
+## 🧩 Troubleshooting
+
+> **Note 1:**  
+> If the example does not initialize correctly, it might be due to an incomplete build.  
+> Try rebuilding the Docker image manually:  
+> ```bash
+> ./docker/build.sh noetic-am
+> ```
+
+> **Note 2:**  
+> If the Gazebo world fails to load properly, wait a few moments or relaunch Gazebo.  
+> The autonomous navigation module requires the world to be fully initialized before operation.
+> I.e., the AM map and the robot trotting in place.
+
+---
+
+✅ **That’s all, folks!**  
+Your environment should now be ready for testing and development within the ArcelorMittal legged robotics workspace.
