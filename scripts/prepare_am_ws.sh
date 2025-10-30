@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_NAME=catkin
-CONTAINER_ALIAS='noetic-am'
+CONTAINER_ALIAS='am-slam-nav'
 
 ORIG_PWD=$(pwd)
 CONTAINER_HOME=$(pwd)/docker/container/$CONTAINER_ALIAS/home/$USER
@@ -10,7 +10,7 @@ SPLITED_ONE=($(echo $CONTAINER_ALIAS | tr "-" "\n"))
 
 mkdir -p $WS_SRC_FOLDER
 
-echo "source /opt/ros/${SPLITED_ONE[0]}/setup.bash" >> $CONTAINER_HOME/.bashrc
+echo "source /opt/ros/noetic/setup.bash" >> $CONTAINER_HOME/.bashrc
 
 echo "This may take a while... Downloading needed packages' repositories..."
 
@@ -50,33 +50,41 @@ git clone -b main https://github.com/MarkNaeem/move_base_sequence.git $WS_SRC_FO
 # Clone Yujin Lidar    
 git clone -b master https://github.com/leggedrobotics-usp/yujin_lidar.git $WS_SRC_FOLDER/yujin_lidar
 
+# RPLiDAR LiDAR
+git clone https://github.com/leggedrobotics-usp/point_lio_unilidar.git $WS_SRC_FOLDER/point_lio_unilidar
+git clone https://github.com/unitreerobotics/unilidar_sdk.git $WS_SRC_FOLDER/unilidar_sdk
+rm -rf $WS_SRC_FOLDER/unilidar_sdk/unitree_lidar_ros2
+mv $WS_SRC_FOLDER/unilidar_sdk/unitree_lidar_ros $WS_SRC_FOLDER
+mv $WS_SRC_FOLDER/unilidar_sdk/unitree_lidar_sdk $WS_SRC_FOLDER
+rm -rf $WS_SRC_FOLDER/unilidar_sdk
+
+# Robosense LiDAR
+git clone  https://github.com/RoboSense-LiDAR/rslidar_sdk.git $WS_SRC_FOLDER/rslidar_sdk
+cd $WS_SRC_FOLDER/rslidar_sdk
+git submodule init
+git submodule update
+cd $WS_SRC_FOLDER
+
+# Livox LiDAR
+# git clone https://github.com/Livox-SDK/livox_ros_driver2.git $WS_SRC_FOLDER/livox_ros_driver2
+# git clone https://github.com/Livox-SDK/livox_ros_driver.git $WS_SRC_FOLDER/livox_ros_driver
+# git clone https://github.com/koide3/livox_to_pointcloud2.git $WS_SRC_FOLDER/livox_to_pointcloud2
+# git clone https://github.com/hku-mars/FAST_LIO $WS_SRC_FOLDER/FAST_LIO
+# cd $WS_SRC_FOLDER/FAST_LIO
+# git submodule update --init
+# cd $WS_SRC_FOLDER
+
+# Aruco detection
+git clone https://github.com/leggedrobotics-usp/fiducial_detect_ros $WS_SRC_FOLDER/fiducial_detect_ros
+
 # Clone rtabmap_ros
 git clone -b noetic-devel https://github.com/introlab/rtabmap_ros.git $WS_SRC_FOLDER/rtabmap_ros
 
 # Clone mapping legro    
 git clone -b am2/dev git@github.com:leggedrobotics-usp/mapping_legro.git $WS_SRC_FOLDER/mapping_legro
 
-# Clone am navigation   
+# Clone am_navigation   
 git clone -b am2/dev git@github.com:leggedrobotics-usp/am_navigation.git $WS_SRC_FOLDER/am_navigation
-
-# Colocando o am_maps
-git clone -b am/dev git@github.com:leggedrobotics-usp/am_maps.git $WS_SRC_FOLDER/am_maps
-
-git clone https://github.com/Livox-SDK/livox_ros_driver2.git $WS_SRC_FOLDER/livox_ros_driver2
-
-git clone https://github.com/Livox-SDK/livox_ros_driver.git $WS_SRC_FOLDER/livox_ros_driver
-
-git clone https://github.com/koide3/livox_to_pointcloud2.git $WS_SRC_FOLDER/livox_to_pointcloud2
-
-git clone git@github.com:leggedrobotics-usp/fiducial_detect_ros.git $WS_SRC_FOLDER/fiducial_detect_ros
-
-git clone https://github.com/hku-mars/FAST_LIO $WS_SRC_FOLDER/FAST_LIO
-cd $WS_SRC_FOLDER/FAST_LIO
-git submodule update --init
-
-cd $WS_SRC_FOLDER
-git clone https://github.com/unitreerobotics/unilidar_sdk.git
-rm -rf unilidar_sdk/unitree_lidar_ros2
 
 #Folow waypointS
 #git clone -b master https://github.com/danielsnider/follow_waypoints.git $WS_SRC_FOLDER/follow_waypoints

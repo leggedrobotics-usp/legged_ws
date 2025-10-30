@@ -105,30 +105,30 @@ RUN apt install -y libeigen3-dev libsuitesparse-dev qtdeclarative5-dev && \
     make -j$(nproc) && make install
 
     # Instala GTSAM
-# RUN apt install -y libboost-all-dev libtbb-dev && \
-#     git clone https://github.com/borglab/gtsam.git && \
-#     cd gtsam && mkdir build && cd build && \
-#     cmake .. -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON && \
-#     make -j$(nproc) && make install
+RUN apt install -y libboost-all-dev libtbb-dev && \
+    git clone https://github.com/borglab/gtsam.git && \
+    cd gtsam && mkdir build && cd build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON && \
+    make -j$(nproc) && make install
 
 # Instala aruco-msgs
 RUN apt install -y ros-noetic-aruco-msgs
 
 # Instala RTAB-Map manualmente (versão específica)
-# WORKDIR /root/rtabmap
-# ENV CMAKE_INCLUDE_PATH=/opt/ros/noetic/include
-# ENV CMAKE_LIBRARY_PATH=/opt/ros/noetic/lib
-# RUN git clone https://github.com/introlab/rtabmap.git . && \
-#     git checkout 0.21.13-noetic && \
-#     mkdir -p build && cd build && \
-#     cmake -DCMAKE_BUILD_TYPE=Release .. && \
-#     make -j$(nproc) && make install
+WORKDIR /root/rtabmap
+ENV CMAKE_INCLUDE_PATH=/opt/ros/noetic/include
+ENV CMAKE_LIBRARY_PATH=/opt/ros/noetic/lib
+RUN git clone https://github.com/introlab/rtabmap.git . && \
+    git checkout 0.21.13-noetic && \
+    mkdir -p build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    make -j$(nproc) && make install
 
 # Instala LCM para robô real
-# WORKDIR /tmp
-# RUN git clone -b v1.4.0 https://github.com/lcm-proj/lcm && \
-#     mkdir -p /tmp/lcm/build && cd /tmp/lcm/build && \
-#     cmake .. && make && make install
+WORKDIR /tmp
+RUN git clone -b v1.4.0 https://github.com/lcm-proj/lcm && \
+    mkdir -p /tmp/lcm/build && cd /tmp/lcm/build && \
+    cmake .. && make && make install
 
 # Instala Intel RealSense SDK e dependências
 RUN apt install -y git libssl-dev libusb-1.0-0-dev pkg-config \
@@ -145,32 +145,14 @@ RUN apt install -y ros-noetic-realsense2-camera ros-noetic-realsense2-descriptio
 # Instala Python e kiss-icp
 RUN apt install -y python3 python3-dev python3-pip && pip3 install kiss-icp
 
-WORKDIR /opt/livoxmid360sdk1
-RUN git clone https://github.com/Livox-SDK/Livox-SDK.git && \
-    cd ./Livox-SDK/ && \
-    cd build && \
-    cmake .. && make -j && \
-    sudo make install
-
-WORKDIR /opt/livoxmid360sdk2
-RUN git clone https://github.com/Livox-SDK/Livox-SDK2.git && \
-    cd ./Livox-SDK2/ && \
-    mkdir build && \
-    cd build && \
-    cmake .. && make -j && \
-    make install
-
 RUN ldconfig
-
 RUN apt install -y net-tools
 RUN apt install -y nmap
 RUN apt install -y iproute2
 RUN apt install -y iputils-ping
 
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Ferramentas de sistema e build
-    
     usbutils \
     v4l-utils \
     # Dependências para compilar librealsense e outros pacotes
@@ -185,6 +167,43 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ddynamic-reconfigure \
     ros-noetic-image-transport \
     ros-noetic-rqt* \
-    ros-noetic-aruco-ros \
-    # USB cam for local testing
-    ros-noetic-usb-cam
+    ros-noetic-aruco-ros
+## Robosense
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libyaml-cpp-dev \
+    libpcap-dev
+# ================ LIVOX
+# WORKDIR /opt/livoxmid360sdk1
+# RUN git clone https://github.com/Livox-SDK/Livox-SDK.git && \
+#     cd ./Livox-SDK/ && \
+#     cd build && \
+#     cmake .. && make -j && \
+#     sudo make install
+
+# WORKDIR /opt/livoxmid360sdk2
+# RUN git clone https://github.com/Livox-SDK/Livox-SDK2.git && \
+#     cd ./Livox-SDK2/ && \
+#     mkdir build && \
+#     cd build && \
+#     cmake .. && make -j && \
+#     make install
+
+# ================ NÃO SABEMOS PRA QUÊ SERVE
+#WORKDIR /opt/pcl/src
+#RUN wget https://github.com/PointCloudLibrary/pcl/releases/download/pcl-1.15.1/source.tar.gz && \
+#    tar xvf source.tar.gz && \
+#    cd pcl && \
+#    mkdir build && \
+#    cd build && \
+#    cmake .. && \
+#    make -j2 && \
+#    make -j2 install
+
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     ros-noetic-pcl-conversions \
+#     libeigen3-dev
+
+###
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     libyaml-cpp-dev \
+#     libpcap-dev

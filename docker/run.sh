@@ -44,6 +44,7 @@ else
         --ipc="host" \
         --privileged \
         --oom-kill-disable \
+        --group-add dialout \
         --volume="$HOST_USER_HOME:$CONTAINER_USER_HOME:rw" \
         --volume="/etc/group:/etc/group:ro" \
         --volume="/etc/passwd:/etc/passwd:ro" \
