@@ -79,6 +79,9 @@ else
 
     git clone git@github.com:leggedrobotics-usp/fiducial_detect_ros.git $WS_SRC_FOLDER/fiducial_detect_ros
 
+    #Clone yolo adapter
+    git clone https://github.com/leggedrobotics-usp/yolo_ros_adapter.git $WS_SRC_FOLDER/yolo_ros_adapter
+
     git clone https://github.com/hku-mars/FAST_LIO $WS_SRC_FOLDER/FAST_LIO
     cd $WS_SRC_FOLDER/FAST_LIO
     git submodule update --init
